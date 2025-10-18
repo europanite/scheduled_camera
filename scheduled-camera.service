@@ -1,0 +1,8 @@
+[Unit]
+Description=Scheduled Camera - single shot
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/default/scheduled-camera
+WorkingDirectory=%EHOME/scheduled_camera
+ExecStart=%EHOME/scheduled_camera/main.sh

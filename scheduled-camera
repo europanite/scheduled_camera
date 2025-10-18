@@ -1,0 +1,5 @@
+# Override defaults in main.sh
+CAM_DEVICE=/dev/video0
+CAM_SIZE=1920x1080
+CAM_FLIP=hv
+OUT_DIR=%EHOME/scheduled_camera/data
