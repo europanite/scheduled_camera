@@ -80,7 +80,7 @@ today="$(date +%Y%m%d)"
 ts="$(date +%Y%m%d%H%M%S)"
 out_dir="${OUT_DIR}/img_${today}"
 mkdir -p "$out_dir"
-outfile="${out_dir}/${OUT_PREFIX}_${ts}.jpg"
+outfile="${out_dir}/${OUT_PREFIX}_${ts}.png"
 
 # capture one frame
 # Notes:

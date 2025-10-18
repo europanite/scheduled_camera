@@ -9,7 +9,7 @@ It is designed for **headless servers, IoT devices, and time-lapse photography s
 ## 📸 Overview
 
 **Scheduled Camera** runs either as a `systemd` timer or via `cron`, automatically capturing images at fixed intervals.  
-It supports **custom camera devices, resolutions, flips, formats, and JPEG quality settings** through environment variables or `.env` files.
+It supports **custom camera devices, resolutions, flips, formats, and PNG quality settings** through environment variables or `.env` files.
 
 ---
 
@@ -17,7 +17,6 @@ It supports **custom camera devices, resolutions, flips, formats, and JPEG quali
 
 - 📅 Runs automatically via `systemd.timer` or `crontab`
 - 🎥 Captures a single JPEG image per run using `ffmpeg`
-- ⚙️ Fully configurable via `.env` or environment variables
 - 🔄 Optional horizontal/vertical flip and format control
 - 💾 Organized output directory by date
 - 🧠 Safe shell scripting with `set -Eeuo pipefail`
