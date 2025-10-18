@@ -1,6 +1,6 @@
-title: "standard_react_fastapi_environment"
-description: "a full-stack development environment"
-baseurl: "/standard_react_fastapi_environment"
+title: "scheduled_camera"
+description: "An automated camera capture system "
+baseurl: "/scheduled_camera"
 url: "https://europanite.github.io"
 theme: minima
 markdown: kramdown
