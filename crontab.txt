@@ -1,1 +1,1 @@
-* * * * * cd /home/skinner/package/scheduled_shooting;bash main.sh >> out.log
+* * * * * cd /home/skinner/package/scheduled_shooting;bash capture.sh >> out.log

@@ -16,6 +16,19 @@ set -Eeuo pipefail
 #   JPEG_QUALITY=2              # 2(best)..31(worst), for ffmpeg PNG/JPEG quality mapping
 #   WARMUP_MS=300               # wait time to let camera auto-exposure settle
 # ----------------------------
+CAM_DEVICE=/dev/video0
+CAM_SIZE=1280x720
+CAM_FMT=auto
+
+CAM_FLIP=none
+
+OUT_DIR=./data
+OUT_PREFIX=img
+JPEG_QUALITY=2
+
+WARMUP_MS=300
+
+
 
 # load .env if present
 if [[ -f ".env" ]]; then

@@ -2,20 +2,20 @@
 set -Eeuo pipefail
 
 # Detect package manager
-if command -v apt >/dev/null 2>&1; then
-  sudo apt update -y
-  sudo apt install -y ffmpeg v4l-utils
-elif command -v dnf >/dev/null 2>&1; then
-  sudo dnf install -y ffmpeg v4l2-tools || true
-elif command -v pacman >/dev/null 2>&1; then
-  sudo pacman --noconfirm -Sy ffmpeg v4l-utils
-fi
+# if command -v apt >/dev/null 2>&1; then
+#   sudo apt update -y
+#   sudo apt install -y ffmpeg v4l-utils
+# elif command -v dnf >/dev/null 2>&1; then
+#   sudo dnf install -y ffmpeg v4l2-tools || true
+# elif command -v pacman >/dev/null 2>&1; then
+#   sudo pacman --noconfirm -Sy ffmpeg v4l-utils
+# fi
 
 # Create data dir
 mkdir -p ./data
 
 # Make main executable
-chmod +x ./main.sh
+chmod +x ./capture.sh
 
 # Install systemd units
 if pidof systemd >/dev/null 2>&1; then
@@ -42,7 +42,7 @@ Description=Scheduled Camera - single shot
 Type=oneshot
 EnvironmentFile=-/etc/default/scheduled-camera
 WorkingDirectory=%EHOME/scheduled_camera
-ExecStart=%EHOME/scheduled_camera/main.sh
+ExecStart=%EHOME/scheduled_camera/capture.sh
 SRVEOF
 
   # Write timer (every minute; edit as needed)
@@ -63,5 +63,5 @@ TMREOF
   sudo systemctl enable --now scheduled-camera.timer
   echo "[OK] systemd timer enabled. Use: journalctl -u scheduled-camera -e"
 else
-  echo "[INFO] systemd not detected. Use cron or run ./main.sh manually."
+  echo "[INFO] systemd not detected. Use cron or run ./capture.sh manually."
 fi

@@ -14,7 +14,7 @@ bash installer.sh
 
 ### One-shot test
 ```bash
-bash main.sh
+bash capture.sh
 ```
 
 ### How to use
