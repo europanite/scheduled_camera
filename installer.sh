@@ -2,14 +2,14 @@
 set -Eeuo pipefail
 
 # Detect package manager
-# if command -v apt >/dev/null 2>&1; then
-#   sudo apt update -y
-#   sudo apt install -y ffmpeg v4l-utils
-# elif command -v dnf >/dev/null 2>&1; then
-#   sudo dnf install -y ffmpeg v4l2-tools || true
-# elif command -v pacman >/dev/null 2>&1; then
-#   sudo pacman --noconfirm -Sy ffmpeg v4l-utils
-# fi
+if command -v apt >/dev/null 2>&1; then
+  sudo apt update -y
+  sudo apt install -y ffmpeg v4l-utils
+elif command -v dnf >/dev/null 2>&1; then
+  sudo dnf install -y ffmpeg v4l2-tools || true
+elif command -v pacman >/dev/null 2>&1; then
+  sudo pacman --noconfirm -Sy ffmpeg v4l-utils
+fi
 
 # Create data dir
 mkdir -p ./data
